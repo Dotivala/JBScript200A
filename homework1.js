@@ -15,21 +15,30 @@ console.log("\nMATH PRACTICE");
     const cost2 = (19.99 / sa2).toFixed(2);
     console.log("The costs per square inch are", cost1, " & ", cost2);
 
-console.log("\nADDRESS LINE")
-    const address = " Arzan Dotivala\n 12th Ave Seattle, WA 98122"
+console.log("\nADDRESS")
+    const address = "Arzan Dotivala \n 12th Ave Seattle, WA 98122"
     const spaceindex = address.indexOf(' ');
+    const endoflineindex = address.indexOf('\n');
+    const commaslice = address.indexOf(', ');
+    const lastspace = address.lastIndexOf(' ')
     const firstName = address.slice(0, spaceindex);
-    console.log(firstName);
+    const lastName = address.slice(spaceindex +1, endoflineindex);
+    const streetAddress = address.slice(endoflineindex+2,26);
+    const state = address.slice(commaslice+2, commaslice+5);
+    const city = address.slice(commaslice-7,commaslice);
+    const zipCode = address.slice(lastspace+1,lastspace+6)
 
 
-   // const lastName = 'Dotivala\n';
-  //  const streetAddress =12 + 'th Ave';
-  //  const city = 'Seattle';
-  //  const state = 'WA';
-  //  const zipCode = 98122;
+    console.log(firstName); 
+    console.log(lastName); 
+    console.log(streetAddress); 
+    console.log(city)
+    console.log(state);
+    console.log(zipCode)
 
-  //  let fullAddress = firstName + " " + lastName + " " + streetAddress + " " + city + " " + state + " " + zipCode
-  //  console.log(fullAddress);
-
- console.log("FIND THE MIDDLE DATE")
-
+console.log("\nFIND THE MIDDLE DATE")
+    const startDate = new Date(2019,1,1)
+    const endDate = new Date(2019,3,1)
+    const middleDate =startDate+(endDate-startDate)/2
+   console.log(middleDate)
+console.log("\n")
